@@ -9,11 +9,21 @@ from IntellistokDemoFlaskWeb2018Jul264 import app
 @app.route('/')
 @app.route('/home')
 def home():
+    now = datetime.now()
+    formatted_now = now.strftime("%A, %d %B, %Y at %X")
+
+    #html_content = "<html><head><title>Intellistok Demo</title></head><body>"
+    #html_content += "<strong>Here are the measurements taken </strong> on " + formatted_now
+    #html_content += "</body></html>"
+    #return html_content
+
     """Renders the home page."""
+    
     return render_template(
         'index.html',
-        title='Home Page',
-        year=datetime.now().year,
+         title = "Intellistok Demo",
+         message = "Data measured",
+         content = " on " + formatted_now
     )
 
 @app.route('/contact')

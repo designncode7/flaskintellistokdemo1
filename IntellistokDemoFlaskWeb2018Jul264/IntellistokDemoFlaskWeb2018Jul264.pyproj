@@ -41,6 +41,7 @@
     <Folder Include="IntellistokDemoFlaskWeb2018Jul264\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\static\content\bootstrap.css" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\static\content\bootstrap.min.css" />
@@ -66,7 +67,6 @@
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\static\scripts\_references.js" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\about.html" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\contact.html" />
-    <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\index.html" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\layout.html" />
   </ItemGroup>
   <ItemGroup>
