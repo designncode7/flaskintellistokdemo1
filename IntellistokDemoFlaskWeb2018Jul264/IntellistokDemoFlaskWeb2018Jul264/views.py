@@ -1,10 +1,11 @@
 """
 Routes and views for the flask application.
 """
-
 from datetime import datetime
 from flask import render_template
-from IntellistokDemoFlaskWeb2018Jul264 import app
+from IntellistokDemoFlaskWeb2018Jul264 import app, errors
+from azure.servicebus import ServiceBusService, Message, Queue
+
 
 @app.route('/')
 @app.route('/home')
@@ -12,29 +13,25 @@ def home():
     now = datetime.now()
     formatted_now = now.strftime("%A, %d %B, %Y at %X")
 
-    #html_content = "<html><head><title>Intellistok Demo</title></head><body>"
-    #html_content += "<strong>Here are the measurements taken </strong> on " + formatted_now
-    #html_content += "</body></html>"
-    #return html_content
+    bus_service = ServiceBusService(
+    service_namespace='svcbusqueintellidemo',
+    shared_access_key_name='RootManageSharedAccessKey',
+    shared_access_key_value='T5rIqHdGAM9/c1DtorXuyX6Rh3sxzHizri8UpNRqg+o='
+    )
+
+    try:
+        iotmsg = bus_service.receive_queue_message('iothubqueuefri27-ns', peek_lock=False)
+    except Exception as e:
+          return render_template('500.html'), 500
 
     """Renders the home page."""
-    
     return render_template(
         'index.html',
          title = "Intellistok Demo",
-         message = "Data measured",
-         content = " on " + formatted_now
+         datetimeheader = "Data: ",
+         datetimecontent = iotmsg.body
     )
 
-@app.route('/contact')
-def contact():
-    """Renders the contact page."""
-    return render_template(
-        'contact.html',
-        title='Contact',
-        year=datetime.now().year,
-        message='Your contact page.'
-    )
 
 @app.route('/about')
 def about():

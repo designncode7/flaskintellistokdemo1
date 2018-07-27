@@ -18,6 +18,7 @@
     <Name>IntellistokDemoFlaskWeb2018Jul264</Name>
     <RootNamespace>IntellistokDemoFlaskWeb2018Jul264</RootNamespace>
     <InterpreterId>MSBuild|env2018jul26|$(MSBuildProjectFullPath)</InterpreterId>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,6 +29,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="IntellistokDemoFlaskWeb2018Jul264\errors.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="IntellistokDemoFlaskWeb2018Jul264\__init__.py" />
     <Compile Include="IntellistokDemoFlaskWeb2018Jul264\views.py" />
@@ -42,7 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\static\web.config" />
+    <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\404.html" />
+    <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\errors.html" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\index.html" />
+    <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\500.html" />
     <Content Include="requirements.txt" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\static\content\bootstrap.css" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\static\content\bootstrap.min.css" />
@@ -69,6 +76,7 @@
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\about.html" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\contact.html" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\layout.html" />
+    <None Include="wapythonflaskintellistokdemo - Web Deploy.pubxml" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>

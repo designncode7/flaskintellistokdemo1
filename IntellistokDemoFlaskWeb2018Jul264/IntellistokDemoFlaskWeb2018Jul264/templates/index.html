@@ -1,8 +1,8 @@
-<html>
-<head>
+{% extends "layout.html" %}
+
+{% block content %}
+
     <title>{{ title }}</title>
-</head>
-<body>
-    <strong>{{ message }}</strong>{{ content }}
-</body>
-</html>
+    <strong>{{ datetimeheader }}</strong>{{ datetimecontent }}
+
+{% endblock %}
