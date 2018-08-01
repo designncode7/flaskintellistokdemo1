@@ -2,7 +2,20 @@
 
 {% block content %}
 
-    <title>{{ title }}</title>
-    <strong>{{ datetimeheader }}</strong>{{ datetimecontent }}
+<div class="jumbotron">
+    <h2> IoT Device Data: </h2>
+    <pre id="iotdata"></pre>
+    <script>
+        var source = new EventSource('/event_stream');
+        source.onmessage = function (event) {
+            console.log(event.data);
+            var myeventdata = event.data;
+            alert(myeventdata);
+            console.log(myeventdata);
+            document.getElementById("iotdata").innerHTML=myeventdata;
+        };
+    </script>
+
+</div>
 
 {% endblock %}
