@@ -9,10 +9,25 @@
         var source = new EventSource('/event_stream');
         source.onmessage = function (event) {
             console.log(event.data);
-            var myeventdata = event.data;
-            alert(myeventdata);
-            console.log(myeventdata);
-            document.getElementById("iotdata").innerHTML=myeventdata;
+            var tempjson = String(event.data);
+            tempjson = tempjson.substr(1);
+
+            // Get indices of actual message
+            var start = tempjson.indexOf("\'") + 1;
+            var end = tempjson.lastIndexOf("}") + 1;
+            var length = end - start;
+
+            var cleanJsonString = tempjson.substring(start, length + 1);
+
+            console.log(cleanJsonString);
+            var myiotdata = JSON.parse(cleanJsonString);
+            //alert(myiotdata.date);
+            console.log(myiotdata.date);
+            console.log(myiotdata.temp);
+            console.log(myiotdata.humid);
+
+            document.getElementById("iotdata").innerHTML = cleanJsonString;
+
         };
     </script>
 

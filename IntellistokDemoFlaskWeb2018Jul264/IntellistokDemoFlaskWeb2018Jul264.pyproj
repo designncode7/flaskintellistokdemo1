@@ -45,6 +45,7 @@
     <Folder Include="IntellistokDemoFlaskWeb2018Jul264\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="IntellistokDemoFlaskWeb2018Jul264\static\favicon.ico" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\static\web.config" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\404.html" />
     <Content Include="IntellistokDemoFlaskWeb2018Jul264\templates\errors.html" />
