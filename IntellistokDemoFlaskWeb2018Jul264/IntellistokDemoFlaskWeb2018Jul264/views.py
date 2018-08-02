@@ -13,7 +13,7 @@ def home():
     #bus_service = ServiceBusService(
     #service_namespace='svcbusqueintellidemo',
     #shared_access_key_name='RootManageSharedAccessKey',
-    #shared_access_key_value='T5rIqHdGAM9/c1DtorXuyX6Rh3sxzHizri8UpNRqg+o=', 
+    #shared_access_key_value='', 
     #)
 
     #queue_options = Queue()
